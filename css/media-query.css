@@ -9,113 +9,153 @@
   font-weight: 400;
 }
 
-/* 컨테이너 */
+/* All 컨테이너 */
 .container {
   background: silver;
   display: flex;
-  flex-flow: wrap;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* flex-flow: wrap; */
   /*단축 표기법*/
 }
 
-/* 헤더 */
+/* All 헤더 */
 .header {
   background: yellow;
   height: 10vh;
+  flex: 1 1 100%;
 }
 
-/* 네비게이션 */
+/* All 네비게이션 */
 .navigation {
   background: pink;
   height: 10vh;
+  flex: 1 1 100%;
 }
 
-/* 메인 콘텐츠 */
+/* All 메인 콘텐츠 */
 .main-content {
   background: skyblue;
   height: 50vh;
-}
+  flex: 1 1 100%
+} /* 높이를 지정할때 height : calc(100vh - 200px)과 같은식으로 전체공간을 차지하게 만들 수 있음. */
 
-/* 광고 */
+/* All 광고 */
 .ad {
   background: orange;
   height: 20vh;
+  flex: 1 1 100%;
 }
 
-/* 푸터 */
+/* All 푸터 */
 .footer {
   background: lime;
   height: 10vh;
+  flex: 1 1 100%;
 }
 
-/* 모바일 스타일 */
-@media screen and (max-width: 799px) {
+.header, .navigation, .ad{
+  order: -1;
+}
 
-  /* 헤더 */
+/* 테블릿 스타일 */
+@media screen and (min-width: 50em) {
+
+  /* Tablet 헤더 */
   .header {
-    flex: 1 1 100%;
+    flex: 1 1 70%;
     order: -1;
   }
 
-  /* 네비게이션 */
+  /* Tablet 네비게이션 */
   .navigation {
     order: -1;
-    flex: 1 1 100%;
+    flex: 1 1 30%;
   }
 
-  /* 메인 콘텐츠 */
+  /* Tablet 메인 콘텐츠 */
   .main-content {
     height: 50vh;
     flex: 1 1 100%
   }
 
-  /* 광고 */
+  /* Tablet 광고 */
   .ad {
     order: -1;
     flex: 1 1 100%;
   }
 
-  /* 푸터 */
+  /* Tablet 푸터 */
   .footer {
     height: 10vh;
     flex: 1 1 100%;
   }
 }
 
-/* 테블릿 스타일 */
-@media screen and (min-width: 50em) {
-
-  /* 컨테이너 */
-  .container {}
-
-  /* 메인 콘텐츠 */
-  .main-content {}
-
-  /* 광고 */
-  .ad {}
-}
-
 /* 랩탑 스타일 */
 @media screen and (min-width: 64em) {
 
-  /* 컨테이너 */
-  .container {}
+  /* Labtop 헤더 */
+  .header {
+    flex: 1 1 100%;
+    order: -1;
+  }
 
-  /* 메인 콘텐츠 */
-  .main-content {}
+  /* Labtop 네비게이션 */
+  .navigation {
+    flex: 1 1 100%;
+    order: -2;
+  }
 
-  /* 광고 */
-  .ad {}
+  /* Labtop 메인 콘텐츠 */
+  .main-content {
+    flex: 1 1 70%;
+  }
+
+  /* Labtop 광고 */
+  .ad {
+    flex: 1 1 30%;
+    order: -1;
+    height: 50vh;
+  }
+
+  /* Labtop 푸터 */
+  .footer {
+    flex: 1 1 100%;
+  }
 }
 
 /* 와이드스크린 스타일 */
 @media screen and (min-width: 100em) {
 
-  /* 컨테이너 */
-  .container {}
+  /* Wide 헤더 */
+  .header {
+    flex: 1 1 100%;
+    order: -2;
+  }
 
-  /* 메인 콘텐츠 */
-  .main-content {}
+  /* Wide 네비게이션 */
+  .navigation {
+    flex: 1 1 30%;
+    order: -2;
+    height: 50vh;
+  }
 
-  /* 광고 */
-  .ad {}
+  /* Wide 메인 콘텐츠 */
+  .main-content {
+    flex: 1 1 50%;
+    order:-1;
+  }
+
+  /* Wide 광고 */
+  .ad {
+    flex: 1 1 20%;
+    order: -1;
+    height: 50vh;
+  }
+
+  /* Wide 푸터 */
+  .footer {
+    flex: 1 1 100%;
+  }
 }
