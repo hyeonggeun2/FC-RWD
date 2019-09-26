@@ -1,161 +1,26 @@
 @charset "utf-8";
-
-/* 모든 디바이스 */
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 1em;
-  font-weight: 400;
+/* Mobile CSS */
+html{
+  font-size: 10px;
 }
-
-/* All 컨테이너 */
-.container {
-  background: silver;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  /* flex-flow: wrap; */
-  /*단축 표기법*/
+body{
+  background-color: yellow;
 }
-
-/* All 헤더 */
-.header {
-  background: yellow;
-  height: 10vh;
-  flex: 1 1 100%;
-}
-
-/* All 네비게이션 */
-.navigation {
-  background: pink;
-  height: 10vh;
-  flex: 1 1 100%;
-}
-
-/* All 메인 콘텐츠 */
-.main-content {
-  background: skyblue;
-  height: 50vh;
-  flex: 1 1 100%
-} /* 높이를 지정할때 height : calc(100vh - 200px)과 같은식으로 전체공간을 차지하게 만들 수 있음. */
-
-/* All 광고 */
-.ad {
-  background: orange;
-  height: 20vh;
-  flex: 1 1 100%;
-}
-
-/* All 푸터 */
-.footer {
-  background: lime;
-  height: 10vh;
-  flex: 1 1 100%;
-}
-
-.header, .navigation, .ad{
-  order: -1;
-}
-
-/* 테블릿 스타일 */
-@media screen and (min-width: 50em) {
-
-  /* Tablet 헤더 */
-  .header {
-    flex: 1 1 70%;
-    order: -1;
+/* Tablet, Laptop CSS */
+@media screen and (min-width: 50em){
+  html{
+    font-size: 14px;
   }
-
-  /* Tablet 네비게이션 */
-  .navigation {
-    order: -1;
-    flex: 1 1 30%;
-  }
-
-  /* Tablet 메인 콘텐츠 */
-  .main-content {
-    height: 50vh;
-    flex: 1 1 100%
-  }
-
-  /* Tablet 광고 */
-  .ad {
-    order: -1;
-    flex: 1 1 100%;
-  }
-
-  /* Tablet 푸터 */
-  .footer {
-    height: 10vh;
-    flex: 1 1 100%;
+  body{
+    background-color: pink;
   }
 }
-
-/* 랩탑 스타일 */
-@media screen and (min-width: 64em) {
-
-  /* Labtop 헤더 */
-  .header {
-    flex: 1 1 100%;
-    order: -1;
+/* Wide Screen CSS */
+@media screen and (min-width: 64em){
+  html{
+    font-size: 20px;
   }
-
-  /* Labtop 네비게이션 */
-  .navigation {
-    flex: 1 1 100%;
-    order: -2;
-  }
-
-  /* Labtop 메인 콘텐츠 */
-  .main-content {
-    flex: 1 1 70%;
-  }
-
-  /* Labtop 광고 */
-  .ad {
-    flex: 1 1 30%;
-    order: -1;
-    height: 50vh;
-  }
-
-  /* Labtop 푸터 */
-  .footer {
-    flex: 1 1 100%;
-  }
-}
-
-/* 와이드스크린 스타일 */
-@media screen and (min-width: 100em) {
-
-  /* Wide 헤더 */
-  .header {
-    flex: 1 1 100%;
-    order: -2;
-  }
-
-  /* Wide 네비게이션 */
-  .navigation {
-    flex: 1 1 30%;
-    order: -2;
-    height: 50vh;
-  }
-
-  /* Wide 메인 콘텐츠 */
-  .main-content {
-    flex: 1 1 50%;
-    order:-1;
-  }
-
-  /* Wide 광고 */
-  .ad {
-    flex: 1 1 20%;
-    order: -1;
-    height: 50vh;
-  }
-
-  /* Wide 푸터 */
-  .footer {
-    flex: 1 1 100%;
+  body{
+    background-color: skyblue;
   }
 }
