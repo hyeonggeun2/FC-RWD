@@ -3,6 +3,8 @@ var viewport = window.matchMedia('(max-width:999px)');
 $(window).resize(function () {
   location.reload();
 });
+var boardlist = $('.board-list > li');
+boardlist.attr('class', 'icon-star');
 
 if (viewport.matches) { //999px 이하면 실행
   var nav = $('.navigation');
@@ -25,7 +27,7 @@ if (viewport.matches) { //999px 이하면 실행
     }
   });
     items.on('click', function (e) {
-      lists.removeClass('menu-act')
+      lists.removeClass('menu-act');
       $(this).parent().addClass('menu-act');
       if(lists.hasClass('menu-act')){
         items.removeClass('icon-minus').addClass('icon-plus');
